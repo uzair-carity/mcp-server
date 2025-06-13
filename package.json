@@ -1,0 +1,48 @@
+{
+  "name": "carity-mcp-server-v1",
+  "version": "0.1.9",
+  "description": "A Model Context Protocol (MCP) server that provides access to the Carity API for retrieving relevant chunks based on search queries",
+  "type": "module",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "carity",
+    "api",
+    "chunks",
+    "search",
+    "retrieval"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "bin": {
+    "carity-mcp-server-v1": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "start:mcp": "node build/index.js",
+    "test": "node test-client.cjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}
